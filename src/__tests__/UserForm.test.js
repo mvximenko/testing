@@ -25,7 +25,6 @@ test('it calls onUserAdd when the form is submitted', () => {
 
   // Simulate typing in a name
   user.click(nameInput);
-
   user.keyboard('jane');
 
   // Simulate typing in an email
