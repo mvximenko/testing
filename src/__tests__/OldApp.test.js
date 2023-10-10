@@ -1,9 +1,9 @@
 import { render, screen, act } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import App from '../App';
+import OldApp from '../OldApp';
 
 test('can receive a new user and show it on a list', () => {
-  render(<App />);
+  render(<OldApp />);
 
   const nameInput = screen.getByRole('textbox', { name: /name/i });
   const emailInput = screen.getByRole('textbox', { name: /email/i });
