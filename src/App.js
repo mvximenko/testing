@@ -3,7 +3,6 @@ import RootRoute from './routes/RootRoute';
 import HomeRoute from './routes/HomeRoute';
 import NotFoundRoute from './routes/NotFoundRoute';
 import RepositoriesSearchRoute from './routes/RepositoriesSearchRoute';
-import EditorRoute from './routes/EditorRoute';
 import SignUpRoute from './routes/SignUpRoute';
 import SignInRoute from './routes/SignInRoute';
 import SignOutRoute from './routes/SignOutRoute';
@@ -33,10 +32,6 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <HomeRoute />,
-      },
-      {
-        path: 'repositories/:owner/:repoName/*',
-        element: <EditorRoute />,
       },
       {
         path: 'repositories',

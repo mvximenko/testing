@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
-
 function RepositoriesTable({ label, repositories, id }) {
   const rendered =
     repositories &&
     repositories.map((repo, i) => {
       return (
         <div key={repo.id} className='p-0.5'>
-          <Link
+          <a
             className='text-blue-500'
-            to={`/repositories/${repo.full_name}`}
+            href={`https://github.com/${repo.full_name}`}
+            target='_blank'
+            rel='noopener noreferrer'
           >
             {repo.full_name}
-          </Link>
+          </a>
         </div>
       );
     });

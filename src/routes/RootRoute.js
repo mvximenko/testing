@@ -5,7 +5,9 @@ function RootRoute() {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className='mx-auto max-w-screen-xl'>
+        <Outlet />
+      </div>
     </div>
   );
 }

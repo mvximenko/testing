@@ -58,7 +58,7 @@ test('shows a fileicon with the appropriate icon', async () => {
   expect(icon).toHaveClass('js-icon');
 });
 
-test('shows a link to code editor page', async () => {
+test('shows a link to repo', async () => {
   const { repository } = renderComponent();
 
   await screen.findByRole('img', { name: 'javascript' });
@@ -67,5 +67,8 @@ test('shows a link to code editor page', async () => {
     name: new RegExp(repository.owner.login),
   });
 
-  expect(link).toHaveAttribute('href', `/repositories/${repository.full_name}`);
+  expect(link).toHaveAttribute(
+    'href',
+    `https://github.com/${repository.full_name}`
+  );
 });
