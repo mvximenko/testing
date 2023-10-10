@@ -9,6 +9,8 @@ import RepositoriesListItem from '../components/repositories/RepositoriesListIte
 //   };
 // });
 
+// const pause = () => new Promise((resolve) => setTimeout(resolve, 100));
+
 function renderComponent() {
   const repository = {
     full_name: 'facebook/react',
@@ -21,6 +23,7 @@ function renderComponent() {
     html_url: 'https://github.com/facebook/react',
   };
 
+  // MemoryRouter required when component contains Link
   render(
     <MemoryRouter>
       <RepositoriesListItem repository={repository} />
@@ -46,8 +49,6 @@ test('shows a link to github homepage for this repository', async () => {
   const link = screen.getByRole('link', { name: /github repository/i });
   expect(link).toHaveAttribute('href', repository.html_url);
 });
-
-// const pause = () => new Promise((resolve) => setTimeout(resolve, 100));
 
 test('shows a fileicon with the appropriate icon', async () => {
   renderComponent();
