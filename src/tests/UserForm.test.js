@@ -32,8 +32,6 @@ test('it calls onUserAdd when the form is submitted', async () => {
   await user.click(emailInput);
   await user.keyboard('jane@jane.com');
 
-  screen.debug();
-
   // Find the button
   const button = screen.getByRole('button');
 

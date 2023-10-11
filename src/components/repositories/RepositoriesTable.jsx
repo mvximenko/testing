@@ -1,7 +1,7 @@
 function RepositoriesTable({ label, repositories, id }) {
   const rendered =
     repositories &&
-    repositories.map((repo, i) => {
+    repositories.map((repo) => {
       return (
         <div key={repo.id} className='p-0.5'>
           <a
