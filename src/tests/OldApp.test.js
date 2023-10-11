@@ -1,21 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import user from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 import OldApp from '../OldApp';
 
-test('can receive a new user and show it on a list', () => {
+test('can receive a new user and show it on a list', async () => {
+  const user = userEvent.setup();
+
   render(<OldApp />);
 
   const nameInput = screen.getByRole('textbox', { name: /name/i });
   const emailInput = screen.getByRole('textbox', { name: /email/i });
   const button = screen.getByRole('button');
 
-  user.click(nameInput);
-  user.keyboard('jane');
+  await user.click(nameInput);
+  await user.keyboard('jane');
 
-  user.click(emailInput);
-  user.keyboard('jane@jane.com');
+  await user.click(emailInput);
+  await user.keyboard('jane@jane.com');
 
-  user.click(button);
+  await user.click(button);
 
   // screen.debug();
 

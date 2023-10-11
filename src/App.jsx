@@ -6,17 +6,12 @@ import RepositoriesSearchRoute from './routes/RepositoriesSearchRoute';
 import SignUpRoute from './routes/SignUpRoute';
 import SignInRoute from './routes/SignInRoute';
 import SignOutRoute from './routes/SignOutRoute';
-import TestRoute from './routes/TestRoute';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootRoute />,
     children: [
-      {
-        path: 'test',
-        element: <TestRoute />,
-      },
       {
         path: 'signout',
         element: <SignOutRoute />,
